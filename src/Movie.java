@@ -17,7 +17,6 @@ public class Movie {
         this.genre = genre;
         this.yearsCreated = yearsCreated;
     }
-
     //get movie
     public String getMovie() {
         return movie;

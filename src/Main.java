@@ -55,7 +55,7 @@ public class Main {
             // Write movie collection to user
             if (loopInput == 3) {
                 System.out.println("Din filmsamling:");
-                System.out.println(" ");
+
                 for (Movie currentMovie : controller.movieCollection.movieArray) {
                     System.out.println(" Movie title " + currentMovie.getMovie() + " Director " + currentMovie.getDirector() + " Movie Genre " + currentMovie.getGenre() + " Is the movie in color? " + currentMovie.isInColor() + " Length in min " + currentMovie.getLengthInMinutes() + " movie was released in " + currentMovie.getYearsCreated());
 

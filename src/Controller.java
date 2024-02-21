@@ -4,7 +4,6 @@ public class Controller {
 
     public Controller() {
         movieCollection = new MovieCollection();
-
     }
 
     public void addMovie(String movie, String director, boolean isInColor, int lengthInMinutes, String genre, int yearsCreated) {

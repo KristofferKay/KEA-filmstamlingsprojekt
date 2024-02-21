@@ -4,7 +4,6 @@ public class MovieCollection {
     int count = 0;
     ArrayList<Movie> movieArray = new ArrayList<>();
     // arguments
-
     // constructor.
 //    public MovieCollection() {
 //        movieArray = new ArrayList<>();

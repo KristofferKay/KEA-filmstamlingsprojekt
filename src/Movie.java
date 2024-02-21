@@ -17,11 +17,11 @@ public class Movie {
         this.genre = genre;
         this.yearsCreated = yearsCreated;
     }
+
     //get movie
     public String getMovie() {
         return movie;
     }
-
     // get director
     public String getDirector() {
         return director;
@@ -40,6 +40,10 @@ public class Movie {
     // get genre
     public String getGenre() {
         return genre;
+    }
+
+    public int getYearsCreated() {
+        return yearsCreated;
     }
 
 

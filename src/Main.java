@@ -8,14 +8,16 @@ public class Main {
 
         // initiate scanner for main
         Scanner scanner = new Scanner(System.in);
+        System.out.println();
 
         // obj for Movie Collection
-        MovieCollection addMovie = new MovieCollection();
+        Controller controller = new Controller();
 
         while (loopInput != SENTINEL) {
             System.out.println("Velkommen til din filmsamling");
             System.out.println("1. Opret film");
             System.out.println("2. Afslut");
+            System.out.println("3. Se din filmsamling");
             loopInput = scanner.nextInt();
 
             if (loopInput == 1 ) {
@@ -39,15 +41,26 @@ public class Main {
                  System.out.println("Hvilen år er filmen lavet");
                  int yearsCreated = scanner.nextInt();
 
-                 addMovie.addToMovieCollection(movie, director, isInColor, lengthInMinutes, genre, yearsCreated);
+                 controller.addMovie(movie, director, isInColor, lengthInMinutes, genre, yearsCreated);
 
                  System.out.println("Du har tilføjet " + movie + " til din samling");
              }
-        }
-        if (loopInput == SENTINEL) {
-            System.out.println("Du har afsluttet processen");
-        }
 
+            // stops the process
+            if (loopInput == 2) {
+                System.out.println("Du har afsluttet processen");
+                break; // breaks out of the loop
+            }
 
+            // Write movie collection to user
+            if (loopInput == 3) {
+                System.out.println("Din filmsamling:");
+                System.out.println(" ");
+                for (Movie currentMovie : controller.movieCollection.movieArray) {
+                    System.out.println(" Movie title " + currentMovie.getMovie() + " Director " + currentMovie.getDirector() + " Movie Genre " + currentMovie.getGenre() + " Is the movie in color? " + currentMovie.isInColor() + " Length in min " + currentMovie.getLengthInMinutes() + " movie was released in " + currentMovie.getYearsCreated());
+
+                }
+            }
+        }
     }
 }

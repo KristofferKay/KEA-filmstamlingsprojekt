@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.Scanner;
 public class Main {
 
@@ -29,10 +30,16 @@ public class Main {
                  System.out.println("Hvem har skrevet filmen");
                  String director = scanner.next();
 
-                 System.out.println("Er filmen i farver");
-                 boolean isInColor = scanner.nextBoolean();
+                 System.out.println("Er filmen i farver, skriv ja eller nej");
+                 boolean isInColor = false;
+                 String erIFarve = scanner.next();
+                 erIFarve = erIFarve.toLowerCase();
+                  if (erIFarve.equals("ja")){
+                    isInColor=true;
+                    erIFarve = "ja";
+                }
 
-                 System.out.println("Hvor lang er filmen i minutter");
+                System.out.println("Hvor lang er filmen i minutter");
                  int lengthInMinutes = scanner.nextInt();
 
                  System.out.println("Hvad er genre");
@@ -41,7 +48,7 @@ public class Main {
                  System.out.println("Hvilen år er filmen lavet");
                  int yearsCreated = scanner.nextInt();
 
-                 controller.addMovie(movie, director, isInColor, lengthInMinutes, genre, yearsCreated);
+                 controller.addMovieController(movie, director, isInColor, lengthInMinutes, genre, yearsCreated);
 
                  System.out.println("Du har tilføjet " + movie + " til din samling");
              }
@@ -56,11 +63,18 @@ public class Main {
             if (loopInput == 3) {
                 System.out.println("Din filmsamling:");
 
-                for (Movie currentMovie : controller.movieCollection.movieArray) {
-                    System.out.println(" Movie title " + currentMovie.getMovie() + " Director " + currentMovie.getDirector() + " Movie Genre " + currentMovie.getGenre() + " Is the movie in color? " + currentMovie.isInColor() + " Length in min " + currentMovie.getLengthInMinutes() + " movie was released in " + currentMovie.getYearsCreated());
+                System.out.println(controller.returnMovieString());
+//                for (Movie currentMovie : controller.movieCollection.movieArray) {
+//                    System.out.println(" Filmtitle: " + currentMovie.getMovie() +
+//                            "\n Filminstruktør: " + currentMovie.getDirector() +
+//                            "\n Film genre: " + currentMovie.getGenre() +
+//                            "\n Farvefilm?: " + currentMovie.isInColor() +
+//                            "\n Længde i min: " + currentMovie.getLengthInMinutes() +
+//                            "\n Årstal: " + currentMovie.getYearsCreated());
+                    System.out.println(" "); // add ekstra space on the line
 
                 }
             }
         }
+
     }
-}

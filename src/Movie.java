@@ -17,6 +17,7 @@ public class Movie {
         this.genre = genre;
         this.yearsCreated = yearsCreated;
     }
+
     //get movie
     public String getMovie() {
         return movie;
@@ -41,9 +42,23 @@ public class Movie {
         return genre;
     }
 
+    // get for yearscreated
     public int getYearsCreated() {
         return yearsCreated;
     }
 
+    // toString method
+    @Override
+    public String toString(){
+        String result = "";
+        result += "\nFilm title: " + movie + " " + "\nFilm instruktør: " + director + " " + "\nÅrstal: " + yearsCreated;
 
+        if (isInColor) {
+            result += "\nFilmen er i farve";
+        } else {
+            result += "\nFilmen er ikke i farve";
+        }
+        result +=  " " + "\nFilm længde: " + lengthInMinutes + " " + "\nFilm Genre: " + genre;
+        return result;
+    }
 }

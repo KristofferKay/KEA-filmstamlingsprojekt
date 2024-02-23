@@ -1,7 +1,7 @@
 public class Movie {
 
     // arguments for Movie class
-    private String movie;
+    private String title;
     private String director;
     private boolean isInColor;
     private int lengthInMinutes;
@@ -9,8 +9,8 @@ public class Movie {
     private int yearsCreated;
 
     // constructor
-    public Movie (String movie, String director, boolean isInColor, int lengthInMinutes, String genre, int yearsCreated) {
-        this.movie = movie;
+    public Movie (String title, String director, boolean isInColor, int lengthInMinutes, String genre, int yearsCreated) {
+        this.title = title;
         this.director = director;
         this.isInColor = isInColor;
         this.lengthInMinutes = lengthInMinutes;
@@ -19,8 +19,8 @@ public class Movie {
     }
 
     //get movie
-    public String getMovie() {
-        return movie;
+    public String getTitle() {
+        return title;
     }
     // get director
     public String getDirector() {
@@ -46,12 +46,11 @@ public class Movie {
     public int getYearsCreated() {
         return yearsCreated;
     }
-
     // toString method
     @Override
     public String toString(){
         String result = "";
-        result += "\nFilm title: " + movie + " " + "\nFilm instruktør: " + director + " " + "\nÅrstal: " + yearsCreated;
+        result += "\nFilm title: " + title + " " + "\nFilm instruktør: " + director + " " + "\nÅrstal: " + yearsCreated;
 
         if (isInColor) {
             result += "\nFilmen er i farve";
@@ -61,4 +60,10 @@ public class Movie {
         result +=  " " + "\nFilm længde: " + lengthInMinutes + " " + "\nFilm Genre: " + genre;
         return result;
     }
+
+//    public String searchMovie() {
+//        String resultTitle = "";
+//        resultTitle += title;
+//        return resultTitle;
+//    }
 }

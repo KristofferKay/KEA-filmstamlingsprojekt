@@ -19,15 +19,42 @@ public class MovieCollection {
         return result;
     }
 
-    // search method to find a movie in the array based on title
+    // search method with String as return type
     public String searchMovie(String word) {
-        for (Movie sm : movieArray) {
-            if (sm.getTitle().toLowerCase().contains(word.toLowerCase())) {
-                return sm.toString();
+        //
+        ArrayList<String> searchMovieArray = new ArrayList<>();
+
+        // if statement
+        if (word.length() == 1) {
+            // variable that takes first char from our Word(input) adds it to lowercase
+            char singleChar = word.toLowerCase().charAt(0);
+
+            // for loop, to loop over array. We make a objet based on Movie class and assigns it variable name sm.
+            for (Movie sm : movieArray) {
+                // if statement to get title, and use varialbe singleChar to find the movies
+                if (sm.getTitle().toLowerCase().startsWith(String.valueOf(singleChar))) {
+                    // add any resualt to the SearchMovieArray in a string datatype
+                    searchMovieArray.add(sm.toString());
+                }
+            }
+            // if nothing is found with first letter, then we are looking for the whole Word
+        } else {
+            // for loop, to loop over array. We make a objet based on Movie class and assigns it variable name sm.
+            for (Movie sm : movieArray) {
+                // if statement to get title and the whole word.
+                if (sm.getTitle().toLowerCase().startsWith(word.toLowerCase())) {
+                    searchMovieArray.add(sm.toString());
+                }
             }
         }
-            return "Filmen " + " kunne ikke findes i din filmsamling, prøv igen";
+
+        if (searchMovieArray.isEmpty()) {
+            return "Filmen findes ikke i din samling, prøv igen.";
+        } else {
+            return searchMovieArray.toString();
+        }
     }
+
 }
 
 

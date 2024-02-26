@@ -47,6 +47,10 @@ public class Movie {
         return yearsCreated;
     }
     // toString method
+
+    //to string method, that ensures our input is converted to a string in output
+
+    // override, overrides any previus function of the method
     @Override
     public String toString(){
         String result = "";
@@ -57,13 +61,7 @@ public class Movie {
         } else {
             result += "\nFilmen er ikke i farve";
         }
-        result +=  " " + "\nFilm længde: " + lengthInMinutes + " " + "\nFilm Genre: " + genre;
+        result +=  " " + "\nFilm længde: " + lengthInMinutes + " " + "\nFilm Genre: " + genre; // TODO clean up the strings ""
         return result;
     }
-
-//    public String searchMovie() {
-//        String resultTitle = "";
-//        resultTitle += title;
-//        return resultTitle;
-//    }
 }

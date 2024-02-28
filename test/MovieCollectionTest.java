@@ -40,10 +40,9 @@ class MovieCollectionTest {
         searchMovieOjb.addMovie("filmtitle2", "director", true, 22, "action", 222);
         searchMovieOjb.addMovie("filmtitle3", "director", true, 22, "action", 222);
         int actualSize = searchMovieOjb.getMovieArray().size();
-        int expectedResult = actualSize;
+        int expectedResult = 4;
         // assert
         assertEquals(expectedResult, actualSize);
-
     }
 
     @Test

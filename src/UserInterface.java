@@ -58,7 +58,6 @@ public class UserInterface {
             }
         }
     }
-
     public void CreateMovie() {
         // user input
         System.out.println("Hvad er navnet på filmen?");
@@ -120,7 +119,37 @@ public class UserInterface {
             int editInput = scanner.nextInt();
 
             if (editInput == 1) {
-                // add actions
+                System.out.println("Skriv title på den film du ønsker at redigere");
+                String editMovieInput = scanner.next();
+                System.out.println("Hvad ønsker du at ændre? ");
+                int editMovieMenu = scanner.nextInt();
+                System.out.println("1. Title");
+                if (editMovieMenu == 1) {
+                    controller.movieCollection.getMovieArray();
+                }
+                System.out.println("2. Direktør");
+                if (editMovieMenu == 2) {
+
+                }
+                System.out.println("3. Genrer");
+                if (editMovieMenu == 3) {
+
+                }
+                System.out.println("4. Årstal");
+                if (editMovieMenu == 4) {
+
+                }
+                System.out.println("5. Er film i farver");
+                if (editMovieMenu == 5) {
+
+                }
+                System.out.println("6 Film længden");
+                if (editMovieMenu == 6) {
+
+                }
+
+                // AFTER EDITING MSG
+
 
             } else {
                 System.out.println("Du sendes tilbage til hovedmenu");

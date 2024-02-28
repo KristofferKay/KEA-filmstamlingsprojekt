@@ -6,7 +6,13 @@ public class MovieCollection {
     int count = 0;
 
     // we create a new array obj called MovieArray, with datattype Movie, based on movie class
-    ArrayList<Movie> movieArray = new ArrayList<>();
+    private ArrayList<Movie> movieArray = new ArrayList<>();
+
+
+    //get method for movie array
+    public ArrayList<Movie> getMovieArray(){
+        return movieArray;
+    }
 
     // method to assign parameters to addMovie
     public void addMovie(String title, String director, boolean isInColor, int lengthInMinutes, String genre, int yearsCreated) {

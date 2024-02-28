@@ -1,6 +1,6 @@
 public class Movie {
 
-    // arguments for Movie class
+    // variables for Movie class
     private String title;
     private String director;
     private boolean isInColor;
@@ -8,7 +8,7 @@ public class Movie {
     private String genre;
     private int yearsCreated;
 
-    // constructor
+    // constructor, where we take paramters and adds them as arguments
     public Movie (String title, String director, boolean isInColor, int lengthInMinutes, String genre, int yearsCreated) {
         this.title = title;
         this.director = director;
@@ -61,7 +61,7 @@ public class Movie {
         } else {
             result += "\nFilmen er ikke i farve";
         }
-        result +=  " " + "\nFilm længde: " + lengthInMinutes + " " + "\nFilm Genre: " + genre; // TODO clean up the strings ""
+        result +=  " " + "\nFilm længde: " + lengthInMinutes + " " + "\nFilm Genre: " + genre + "\n"; // TODO clean up the strings ""
         return result;
     }
 }

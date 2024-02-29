@@ -32,10 +32,6 @@ public class MovieCollection {
         return result;
     }
 
-    public String getMovieTitleIndex() {
-        return MovieCollection
-    }
-
     // search method with String as return type. Parameter word is from Main
     public String searchMovie(String word) {
         // we make a secondary array with datatype string called searchMovieArray
@@ -72,19 +68,21 @@ public class MovieCollection {
             return searchMovieArray.toString(); // TODO: need to find a alternative for toString, as it adds square brackets to output.
         }
     }
-    public String editMovie(String newTitle) {
-        ArrayList<String> editMovieArray = new ArrayList<>();
+
+    public void editMovie(String newTitle, String title, String newDirector) {
         for (Movie em : movieArray) {
-            int index = movieArray.indexOf(newTitle);
-            em.setTitle(index, newTitle);
-
-            int indexOfTitle = controller.movieCollection.getMovieArray().indexOf(title);
-            String changeTitle = controller.movieCollection.searchMovie(title);
-
-//            movieArray.indexOf(newDirector);
-//            em.setDirector(newDirector);
-
-        } return editMovieArray.toString();
+            if (em.getTitle().equals(title)) {
+                int index = movieArray.indexOf(em);
+                em.setTitle(newTitle);
+                movieArray.set(index, em);
+                // Break out of the loop once the movie is found and edited
+                break;
+//        for (Movie em : movieArray) {
+//            movieArray.indexOf(newTitle);
+//            em.setTitle(newTitle);
+//        }
+            }
+        }
     }
 }
 

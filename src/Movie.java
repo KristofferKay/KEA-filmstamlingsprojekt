@@ -48,6 +48,17 @@ public class Movie {
     }
     // toString method
 
+    public String setTitle(int index, String newTitle) {
+        this.title.indexOf(index);
+        this.title = newTitle;
+        return title;
+    }
+
+    public String setDirector(String newDirector) {
+        this.director = newDirector;
+        return director;
+    }
+
     //to string method, that ensures our input is converted to a string in output
 
     // override, overrides any previus function of the method

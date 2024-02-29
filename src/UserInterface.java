@@ -58,6 +58,7 @@ public class UserInterface {
             }
         }
     }
+
     public void CreateMovie() {
         // user input
         System.out.println("Hvad er navnet på filmen?");
@@ -101,6 +102,7 @@ public class UserInterface {
         // printout movie collection
         System.out.println(controller.returnMovieString());
     }
+
     public void SearchForMovie() {
         System.out.println("Skriv titel på den film du ønsker at finde:");
         MovieCollection movieCollection = controller.movieCollection;
@@ -110,52 +112,70 @@ public class UserInterface {
         System.out.println(controller.returnSearchMovie(word));
         System.out.println("");
     }
-  
-        public void editMovie() {
-            // Edit movie
-            System.out.println("Vælg en mulighed;");
-            System.out.println("1. Rediger en film i din filmsamling");
-            System.out.println("2. Gå tilbage til hovedmenu");
-            int editInput = scanner.nextInt();
 
-            if (editInput == 1) {
-                System.out.println("Skriv title på den film du ønsker at redigere");
-                String editMovieInput = scanner.next();
-                System.out.println("Hvad ønsker du at ændre? ");
-                int editMovieMenu = scanner.nextInt();
-                System.out.println("1. Title");
-                if (editMovieMenu == 1) {
-                    controller.movieCollection.getMovieArray();
-                }
-                System.out.println("2. Direktør");
-                if (editMovieMenu == 2) {
+    public void editMovie() {
+        System.out.println("Skriv title på den film du ønsker at redigere");
+        String title = scanner.next();
 
-                }
-                System.out.println("3. Genrer");
-                if (editMovieMenu == 3) {
+//        ArrayList<Movie> movieArray = controller.movieCollection.getMovieArray();
+        int indexOfTitle = controller.movieCollection.getMovieArray().indexOf(title);
+        String changeTitle = controller.movieCollection.searchMovie(title);
 
-                }
-                System.out.println("4. Årstal");
-                if (editMovieMenu == 4) {
+////         edit only the movie in the index.
+//        String changeOnlyThisMovie = controller.movieCollection.getMovieArray().indexOf(title).set(indexOfMovie, title.toLowerCaseindexOfMovie, title); //
+//        System.out.println("TEST Index of movie: " + indexOfTitle);
+//        System.out.println("Size of movie array: " + controller.movieCollection.getMovieArray().size());
 
-                }
-                System.out.println("5. Er film i farver");
-                if (editMovieMenu == 5) {
+        System.out.println("Skriv tallet på den værdi du ønsker at ændre ");
+        System.out.println("1. Title");
+        System.out.println("2. Direktør");
+        System.out.println("3. Genrer");
+        System.out.println("4. Årstal");
+        System.out.println("5. Er film i farver");
+        System.out.println("6. Film længden");
+        int editMovieMenu = scanner.nextInt();
 
-                }
-                System.out.println("6 Film længden");
-                if (editMovieMenu == 6) {
-
-                }
-
-                // AFTER EDITING MSG
-
-
-            } else {
-                System.out.println("Du sendes tilbage til hovedmenu");
-                System.out.println("----------------");
-                return;
-            }
+        if (editMovieMenu == 1) {
+            System.out.println("Angiv ny værdi");
+            String newTitle = scanner.next();
+            controller.movieCollection.editMovie(newTitle).indexOf(indexOfTitle);
         }
+        if (editMovieMenu == 2) {
+            System.out.println("Angiv ny værdi");
+//            newDirector = scanner.next();
+//            String editMovieWithIndex = controller.movieCollection.editMovie(String.valueOf(indexOfMovie), newDirector);
+        }
+        if (editMovieMenu == 3) {
+
+        }
+        if (editMovieMenu == 4) {
+
+        }
+        if (editMovieMenu == 5) {
+
+        }
+        if (editMovieMenu == 6) {
+
+        }
+//        controller.movieCollection.editMovie(newTitle, newDirector);
+
+
+        // AFTER EDITING MSG
+
+        System.out.println("Du sendes tilbage til hovedmenu");
+        System.out.println("----------------");
+        System.out.println("Du har nu ændret værdien");
+        System.out.println("Her er et udprint af din nye film, i filmsamlingen");
+//
+//            System.out.println(controller.returnSearchMovie(t));
     }
+}
+
+
+
+
+
+
+
+
 

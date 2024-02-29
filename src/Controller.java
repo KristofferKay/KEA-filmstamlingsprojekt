@@ -13,6 +13,10 @@ public class Controller {
         movieCollection.addMovie(title, director, isInColor, lengthInMinutes, genre, yearsCreated);
     }
 
+//    public void editMovieCollection(String title) {
+//        movieCollection.editMovie(title);
+//    }
+
     // getMovieCollection is a method where, we returns the movieArray method from our moviecollection class, as a array based on Movie ( which will hold all parameters to be used in our project)
 //    public ArrayList<Movie> getMovieCollection(){
 //        return movieCollection.movieArray;

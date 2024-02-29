@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -10,9 +11,10 @@ class MovieCollectionTest {
         MovieCollection searchMovieOjb = new MovieCollection();
         // act
         int actualSize = searchMovieOjb.getMovieArray().size();
-        // assert
         int expectedResult = 0;
-        assertEquals(expectedResult, actualSize);
+
+        // assert
+        Assertions.assertEquals(expectedResult, actualSize);
 
     }
 

@@ -1,3 +1,5 @@
+import com.sun.source.tree.BreakTree;
+
 import java.util.ArrayList;
 
 public class MovieCollection {
@@ -10,7 +12,7 @@ public class MovieCollection {
 
 
     //get method for movie array
-    public ArrayList<Movie> getMovieArray(){
+    public ArrayList<Movie> getMovieArray() {
         return movieArray;
     }
 
@@ -28,6 +30,10 @@ public class MovieCollection {
         }
         // retursn result, to be used in Main to output to user
         return result;
+    }
+
+    public String getMovieTitleIndex() {
+        return MovieCollection
     }
 
     // search method with String as return type. Parameter word is from Main
@@ -66,8 +72,22 @@ public class MovieCollection {
             return searchMovieArray.toString(); // TODO: need to find a alternative for toString, as it adds square brackets to output.
         }
     }
+    public String editMovie(String newTitle) {
+        ArrayList<String> editMovieArray = new ArrayList<>();
+        for (Movie em : movieArray) {
+            int index = movieArray.indexOf(newTitle);
+            em.setTitle(index, newTitle);
 
+            int indexOfTitle = controller.movieCollection.getMovieArray().indexOf(title);
+            String changeTitle = controller.movieCollection.searchMovie(title);
+
+//            movieArray.indexOf(newDirector);
+//            em.setDirector(newDirector);
+
+        } return editMovieArray.toString();
+    }
 }
+
 
 
 

@@ -1,7 +1,6 @@
 import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
-import java.util.ArrayList;
-import java.util.Objects;
-import java.util.Scanner;
+import java.util.*;
+
 public class UserInterface {
 
     // variables to be used in the whole class scope
@@ -27,6 +26,7 @@ public class UserInterface {
             System.out.println("3. Se din filmsamling");
             System.out.println("4. Søg på din filmsamling");
             System.out.println("5. Rediger en film");
+            System.out.println("6. Slet en film");
             loopInput = scanner.nextInt();
             // if loop to check if userInput is 1
             if (loopInput == 1) {
@@ -57,6 +57,10 @@ public class UserInterface {
             if (loopInput == 5) {
                 editMovie();
             }
+
+            if (loopInput == 6) {
+                deleteMovie();
+            }
         }
     }
 
@@ -81,13 +85,37 @@ public class UserInterface {
         }
 
         System.out.println("Hvor lang er filmen i minutter");
-        int lengthInMinutes = scanner.nextInt();
+        int lengthInMinutes = 0;
+
+        // EXEPTIONS
+        boolean done = false;
+        while (!done) {
+            try {
+                lengthInMinutes = scanner.nextInt();
+                done = true;
+            } catch (InputMismatchException ime) {
+                System.out.println("Fejl. Skriv som tal, prøv igen");
+                scanner.nextLine();
+            }
+        }
 
         System.out.println("Hvad er genre");
         String genre = scanner.next();
 
         System.out.println("Hvilen år er filmen lavet");
-        int yearsCreated = scanner.nextInt();
+        int yearsCreated = 0;
+
+        // EXPEPTION
+        done = false;
+        while (!done) {
+            try {
+                yearsCreated = scanner.nextInt();
+                done = true;
+            } catch (InputMismatchException ime) {
+                System.out.println("Fejl. Skriv som tal, prøv igen");
+                scanner.nextLine();
+            }
+        }
 
         // we parse our arguments to our addMovieController method in our controller class, via our obj controller.
         controller.addMovieController(title, director, isInColor, lengthInMinutes, genre, yearsCreated);
@@ -130,7 +158,7 @@ public class UserInterface {
                 System.out.println("5. Er film i farver");
                 System.out.println("6. Film længden");
                 int editMovieMenu = scanner.nextInt();
-                try
+
 
                 if (editMovieMenu == 1) {
                     System.out.println("Angiv ny titel:");
@@ -151,8 +179,14 @@ public class UserInterface {
                 }
                 if (editMovieMenu == 4) {
                     System.out.println("Angiv nyt årstal:");
-                    int newYearsCreated = scanner.nextInt();
-                    editMovieArray.setYear(newYearsCreated);
+                    try {
+                        int newYearsCreated = scanner.nextInt();
+                        editMovieArray.setYear(newYearsCreated);
+                    } catch (Exception e) {
+                        System.out.println("Fejl. Skriv som Tal");
+                        int newYearsCreated = scanner.nextInt();
+                        editMovieArray.setYear(newYearsCreated);
+                    }
 
                 }
                 if (editMovieMenu == 5) {
@@ -175,4 +209,40 @@ public class UserInterface {
 
         }
     }
-}
+
+    public void deleteMovie() {
+        System.out.println("Skriv titel på den film du ønsker at slette:");
+        String delMovieTitle = scanner.next();
+
+        MovieCollection movieCollection = controller.movieCollection;
+        String deletedMovieTitle = controller.returnDelMovie(delMovieTitle);
+        System.out.println("Du har slettet " + deletedMovieTitle + " fra din filmsamling");
+
+    }
+//        System.out.println("Skriv titel på den film, du ønsker at slette fra din samling");
+//        String titleToDelete = scanner.next();
+//
+//        ArrayList<Movie> movieArray = controller.movieCollection.getMovieArray();
+//        for (Movie deleteMovieArr : movieArray) {
+//            if (deleteMovieArr.getTitle().equals(titleToDelete)) {
+//                System.out.println("Title fundet");
+//                titleToDelete.indexOf(titleToDelete);
+//                movieArray.remove(titleToDelete);
+//            } else {
+//                System.out.println("Title ikke fundet, prøv igen");
+//            }
+//            }
+//
+//                System.out.println("Du har nu slettet " + titleToDelete + " fra din filmsamling");
+//                System.out.println("Du sendes tilbage til hovedmenu");
+//                System.out.println("----------------");
+//
+//
+////                if (editMovieMenu == 1) {
+////                    System.out.println("Angiv ny titel:");
+////                    String newTitle = scanner.next();
+////                    editMovieArray.setTitle(newTitle);
+////                }
+            }
+
+

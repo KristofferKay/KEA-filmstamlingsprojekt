@@ -23,4 +23,8 @@ public class Controller {
     public String returnSearchMovie(String word) {
         return movieCollection.searchMovie(word);
     }
+
+    public String returnDelMovie(String delMovieTitle){
+        return movieCollection.deleteMovie(delMovieTitle);
+    }
 }

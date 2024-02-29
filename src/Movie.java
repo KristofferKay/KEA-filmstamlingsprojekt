@@ -74,6 +74,7 @@ public class Movie {
     }
 
 
+
     //to string method, that ensures our input is converted to a string in output
 
     // override, overrides any previus function of the method

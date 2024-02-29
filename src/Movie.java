@@ -46,18 +46,33 @@ public class Movie {
     public int getYearsCreated() {
         return yearsCreated;
     }
-    // toString method
 
-    public String setTitle(int index, String newTitle) {
-        this.title.indexOf(index);
-        this.title = newTitle;
-        return title;
+
+    // SETTERS
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String setDirector(String newDirector) {
-        this.director = newDirector;
-        return director;
+    public void setDirector(String director) {
+        this.director = director;
     }
+
+    public void setYear(int yearsCreated) {
+        this.yearsCreated = yearsCreated;
+    }
+
+    public void setColor(boolean isInColor) {
+        isInColor = isInColor;
+    }
+
+    public void setLengthInMinutes(int lengthInMinutes) {
+        this.lengthInMinutes = lengthInMinutes;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
 
     //to string method, that ensures our input is converted to a string in output
 

@@ -69,22 +69,17 @@ public class MovieCollection {
         }
     }
 
-    public void editMovie(String newTitle, String title, String newDirector) {
-        for (Movie em : movieArray) {
-            if (em.getTitle().equals(title)) {
-                int index = movieArray.indexOf(em);
-                em.setTitle(newTitle);
-                movieArray.set(index, em);
-                // Break out of the loop once the movie is found and edited
-                break;
-//        for (Movie em : movieArray) {
-//            movieArray.indexOf(newTitle);
-//            em.setTitle(newTitle);
-//        }
-            }
-        }
-    }
+//    public void editMovie(int i, String title, String director, int year, boolean color, int lengthInMinutes, String genre) {
+//        Movie m = movieArray.get(i);
+//        m.setTitle(title);
+//        m.setDirector(director);
+//        m.setYear(year);
+//        m.setColor(color);
+//        m.setLengthInMinutes(lengthInMinutes);
+//        m.setGenre(genre);
+//    }
 }
+
 
 
 

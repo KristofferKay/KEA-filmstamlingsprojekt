@@ -1,3 +1,4 @@
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
@@ -114,68 +115,64 @@ public class UserInterface {
     }
 
     public void editMovie() {
-        System.out.println("Skriv title på den film du ønsker at redigere");
-        String title = scanner.next();
+        System.out.println("Skriv titel på den film, du ønsker at redigere");
+        String titleToEdit = scanner.next();
 
-//        ArrayList<Movie> movieArray = controller.movieCollection.getMovieArray();
-        int indexOfTitle = controller.movieCollection.getMovieArray().indexOf(title);
-        String changeTitle = controller.movieCollection.searchMovie(title);
+        ArrayList<Movie> movieArray = controller.movieCollection.getMovieArray();
 
-////         edit only the movie in the index.
-//        String changeOnlyThisMovie = controller.movieCollection.getMovieArray().indexOf(title).set(indexOfMovie, title.toLowerCaseindexOfMovie, title); //
-//        System.out.println("TEST Index of movie: " + indexOfTitle);
-//        System.out.println("Size of movie array: " + controller.movieCollection.getMovieArray().size());
+        for (Movie editMovieArray : movieArray) {
+            if (editMovieArray.getTitle().equals(titleToEdit)) {
+                System.out.println("Skriv tallet på den værdi du ønsker at ændre ");
+                System.out.println("1. Title");
+                System.out.println("2. Direktør");
+                System.out.println("3. Genrer");
+                System.out.println("4. Årstal");
+                System.out.println("5. Er film i farver");
+                System.out.println("6. Film længden");
+                int editMovieMenu = scanner.nextInt();
+                try
 
-        System.out.println("Skriv tallet på den værdi du ønsker at ændre ");
-        System.out.println("1. Title");
-        System.out.println("2. Direktør");
-        System.out.println("3. Genrer");
-        System.out.println("4. Årstal");
-        System.out.println("5. Er film i farver");
-        System.out.println("6. Film længden");
-        int editMovieMenu = scanner.nextInt();
+                if (editMovieMenu == 1) {
+                    System.out.println("Angiv ny titel:");
+                    String newTitle = scanner.next();
+                    editMovieArray.setTitle(newTitle);
+                }
+                if (editMovieMenu == 2) {
+                    System.out.println("Angiv ny direktør:");
+                    String newDirector = scanner.next();
+                    editMovieArray.setDirector(newDirector);
 
-        if (editMovieMenu == 1) {
-            System.out.println("Angiv ny værdi");
-            String newTitle = scanner.next();
-            controller.movieCollection.editMovie(newTitle).indexOf(indexOfTitle);
+                }
+                if (editMovieMenu == 3) {
+                    System.out.println("Angiv ny genre:");
+                    String newGenre = scanner.next();
+                    editMovieArray.setGenre(newGenre);
+
+                }
+                if (editMovieMenu == 4) {
+                    System.out.println("Angiv nyt årstal:");
+                    int newYearsCreated = scanner.nextInt();
+                    editMovieArray.setYear(newYearsCreated);
+
+                }
+                if (editMovieMenu == 5) {
+                    System.out.println("Er film i farver?");
+                    boolean newIsInColor = scanner.nextBoolean();
+                    editMovieArray.setColor(newIsInColor);
+                }
+                if (editMovieMenu == 6) {
+                    System.out.println("Angiv ny film længde i minutter:");
+                    int newLengthInMinutes = scanner.nextInt();
+                    editMovieArray.setLengthInMinutes(newLengthInMinutes);
+
+                    // AFTER EDITING MSG
+                    System.out.println("Du sendes tilbage til hovedmenu");
+                    System.out.println("----------------");
+                    System.out.println("Du har nu ændret værdien");
+                    System.out.println("Her er et udprint af din nye film, i filmsamlingen");
+                }
+            }
+
         }
-        if (editMovieMenu == 2) {
-            System.out.println("Angiv ny værdi");
-//            newDirector = scanner.next();
-//            String editMovieWithIndex = controller.movieCollection.editMovie(String.valueOf(indexOfMovie), newDirector);
-        }
-        if (editMovieMenu == 3) {
-
-        }
-        if (editMovieMenu == 4) {
-
-        }
-        if (editMovieMenu == 5) {
-
-        }
-        if (editMovieMenu == 6) {
-
-        }
-//        controller.movieCollection.editMovie(newTitle, newDirector);
-
-
-        // AFTER EDITING MSG
-
-        System.out.println("Du sendes tilbage til hovedmenu");
-        System.out.println("----------------");
-        System.out.println("Du har nu ændret værdien");
-        System.out.println("Her er et udprint af din nye film, i filmsamlingen");
-//
-//            System.out.println(controller.returnSearchMovie(t));
     }
 }
-
-
-
-
-
-
-
-
-

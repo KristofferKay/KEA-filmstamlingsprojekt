@@ -206,43 +206,17 @@ public class UserInterface {
                     System.out.println("Her er et udprint af din nye film, i filmsamlingen");
                 }
             }
-
         }
     }
-
     public void deleteMovie() {
         System.out.println("Skriv titel på den film du ønsker at slette:");
         String delMovieTitle = scanner.next();
 
-        MovieCollection movieCollection = controller.movieCollection;
+//        MovieCollection movieCollection = controller.movieCollection; // UNCOMMENT FØR DET VIRKER
         String deletedMovieTitle = controller.returnDelMovie(delMovieTitle);
         System.out.println("Du har slettet " + deletedMovieTitle + " fra din filmsamling");
 
     }
-//        System.out.println("Skriv titel på den film, du ønsker at slette fra din samling");
-//        String titleToDelete = scanner.next();
-//
-//        ArrayList<Movie> movieArray = controller.movieCollection.getMovieArray();
-//        for (Movie deleteMovieArr : movieArray) {
-//            if (deleteMovieArr.getTitle().equals(titleToDelete)) {
-//                System.out.println("Title fundet");
-//                titleToDelete.indexOf(titleToDelete);
-//                movieArray.remove(titleToDelete);
-//            } else {
-//                System.out.println("Title ikke fundet, prøv igen");
-//            }
-//            }
-//
-//                System.out.println("Du har nu slettet " + titleToDelete + " fra din filmsamling");
-//                System.out.println("Du sendes tilbage til hovedmenu");
-//                System.out.println("----------------");
-//
-//
-////                if (editMovieMenu == 1) {
-////                    System.out.println("Angiv ny titel:");
-////                    String newTitle = scanner.next();
-////                    editMovieArray.setTitle(newTitle);
-////                }
-            }
+}
 
 

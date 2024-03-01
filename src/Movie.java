@@ -53,6 +53,7 @@ public class Movie {
         this.title = title;
     }
 
+
     public void setDirector(String director) {
         this.director = director;
     }
@@ -72,7 +73,6 @@ public class Movie {
     public void setGenre(String genre) {
         this.genre = genre;
     }
-
 
 
     //to string method, that ensures our input is converted to a string in output

@@ -68,6 +68,7 @@ public class MovieCollection {
         }
     }
 
+    // method to deleteMovie based on Title of the movie
     public String deleteMovie(String delMovieTitle) {
         Iterator<Movie> iterator = movieArray.iterator();
         while (iterator.hasNext()) {
@@ -77,17 +78,6 @@ public class MovieCollection {
             }
         } return delMovieTitle;
     }
-
-
-    //    public void editMovie(int i, String title, String director, int year, boolean color, int lengthInMinutes, String genre) {
-//        Movie m = movieArray.get(i);
-//        m.setTitle(title);
-//        m.setDirector(director);
-//        m.setYear(year);
-//        m.setColor(color);
-//        m.setLengthInMinutes(lengthInMinutes);
-//        m.setGenre(genre);
-//    }
 }
 
 
